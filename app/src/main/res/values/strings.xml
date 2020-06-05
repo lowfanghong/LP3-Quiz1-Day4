@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">LP3-Quiz1</string>
-    <string name="big Picture">Big Picture Notification</string>
-    <string name="in box">Inbox Style Notification</string>
-    <string name="ba sic">Basic Notification</string>
+
 </resources>

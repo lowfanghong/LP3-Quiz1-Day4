@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnBasic = (Button) findViewById(R.id.btnBasic);
-        btnPicture = (Button) findViewById(R.id.btnPicture);
-        btnInbox = (Button) findViewById(R.id.btnInbox);
+        btnBasic = (Button) findViewById(R.id.ButtonBasic);
+        btnPicture = (Button) findViewById(R.id.ButtonBigPic);
+        btnInbox = (Button) findViewById(R.id.ButtonInbox);
 
         final NotificationManager notificationManager = (NotificationManager)
                 getSystemService(NOTIFICATION_SERVICE);
@@ -72,11 +72,16 @@ public class MainActivity extends AppCompatActivity {
         btnPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NotificationCompat.BigPictureStyle bigpicStyle =
+                        new NotificationCompat.BigPictureStyle();
+                bigpicStyle.bigPicture(BitmapFactory.decodeResource(getResources(),
+                        R.drawable.koala)).build();
 
                 NotificationCompat.Builder builder = new
                         NotificationCompat.Builder(MainActivity.this, "default");
                 builder.setContentTitle("LP3 Quiz1");
                 builder.setContentText("Expand to see picture");
+                builder.setStyle(bigpicStyle);
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
                 builder.setContentIntent(pIntent);
                 builder.setAutoCancel(true);
